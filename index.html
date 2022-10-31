@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="theme-next mist use-motion">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta http-equiv="Cache-Control" content="no-transform" />
+      <meta http-equiv="Cache-Control" content="no-siteapp" />
+      <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
+      <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+      <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+      <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+      <meta name="keywords" content="Hemuio, CalabashFox" />
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title> Test site </title>
+   </head>
+   <script type="text/javascript">
+		// example code to run after page has been loaded
+		document.addEventListener('DOMContentLoaded', function () {
+			// get reference code from url for springtime.se
+			const ref = new URLSearchParams(window.location.search).get('ref_cd');
+			// links without any referrer will be ignored
+			if (ref !== null) {
+				// get list of all bookable options to Comers
+				const options = document.querySelectorAll('.departure-list option');
+
+				options.forEach(function(option) {
+					// ignore option groups
+					if (typeof option.dataset.bookinglink !== 'undefined') {
+						// append reference code to Comers booking link
+						option.dataset.bookinglink = option.dataset.bookinglink + '&ref_cd=' + ref;
+					}
+				});
+			}
+		}, false);
+
+		// test code to simulate navigation
+		function select(selectElement) {
+			const bookingLink = selectElement.options[selectElement.selectedIndex].dataset.bookinglink;
+			if (typeof bookingLink !== 'undefined') {
+				window.location.href = bookingLink;
+			}
+		}
+   </script>
+   <div class="inner">
+      <div class="price-content">
+         <div class="inner">Från <span class="price orange">10 995</span> <span class="orange">SEK</span></div>
+      </div>
+      <!-- .booking-select -->
+      <div class="booking-select">
+         <div class="inner">
+            <h3>Välj från lista för bokning</h3>
+            <select class="departure-list form-control" onchange="select(this)">
+               <option value="Resor">Välj Resa</option>
+               <optgroup id="4460" label="Avresa 5 november 2022 – Ströplatser &amp; väntelista kvar">
+                  <option data-redirect="1" data-travelid="27036" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-5-november-2022/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=22-11-05&amp;resort_cd=FAO&amp;product_cd=TCS22V9&amp;fromDateString=22-11-05&amp;package_id1=7606"> 5 Nov 2022 - Alla avreseorter, 7 dagar 13995kr</option>
+                  <option data-redirect="1" data-travelid="27037" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-5-november-2022/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=22-11-05&amp;resort_cd=FAO&amp;product_cd=TCS22V8&amp;fromDateString=22-11-05&amp;package_id1=7605"> 5 Nov 2022 - Alla avreseorter, 14 dagar 18995kr</option>
+               </optgroup>
+               <optgroup id="8733" label="Avresa 12 november 2022 – 1 plats kvar!">
+                  <option data-redirect="1" data-travelid="27039" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-12-november-2022/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=22-11-12&amp;resort_cd=FAO&amp;product_cd=TCS22V11&amp;fromDateString=22-11-12&amp;package_id1=7602"> 12 Nov 2022 - Alla avreseorter, 7 dagar 13995kr</option>
+               </optgroup>
+               <optgroup id="8893" label="Avresa 19 november 2022 – Fåtal platser">
+                  <option data-redirect="1" data-travelid="27041" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-19-november-2022-rod-avgang/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=22-11-19&amp;resort_cd=FAO&amp;product_cd=TCS22V12&amp;fromDateString=22-11-19&amp;package_id1=7600"> 19 Nov 2022 - Alla avreseorter, 7 dagar 10995kr</option>
+               </optgroup>
+               <optgroup id="26088" label="Avresa 25 februari 2023">
+                  <option data-redirect="1" data-travelid="28018" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-25-februari-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-02-25&amp;resort_cd=FAO&amp;product_cd=TCS23V1&amp;fromDateString=23-02-25&amp;package_id1=7799"> 25 Feb 2023 - Alla avreseorter, 7 dagar 12995kr</option>
+                  <option data-redirect="1" data-travelid="28019" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-25-februari-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-02-25&amp;resort_cd=FAO&amp;product_cd=TCS23V4&amp;fromDateString=23-02-25&amp;package_id1=7801"> 25 Feb 2023 - Alla avreseorter, 14 dagar 18495kr</option>
+                  <option data-redirect="1" data-travelid="28020" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-25-februari-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-02-25&amp;resort_cd=FAO&amp;product_cd=TCS23V6&amp;fromDateString=23-02-25&amp;package_id1=7803"> 25 Feb 2023 - Alla avreseorter, 21 dagar 22495kr</option>
+               </optgroup>
+               <optgroup id="26089" label="Avresa 4 mars 2023">
+                  <option data-redirect="1" data-travelid="28039" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-4-mars-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-03-04&amp;resort_cd=FAO&amp;product_cd=TCS23V2&amp;fromDateString=23-03-04&amp;package_id1=7800"> 4 Mars 2023 - Alla avreseorter, 7 dagar 12995kr</option>
+                  <option data-redirect="1" data-travelid="28040" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-4-mars-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-03-04&amp;resort_cd=FAO&amp;product_cd=TCS23V5&amp;fromDateString=23-03-04&amp;package_id1=7802"> 4 Mars 2023 - Alla avreseorter, 14 dagar 18495kr</option>
+               </optgroup>
+               <optgroup id="26090" label="Avresa 11 mars 2023">
+                  <option data-redirect="1" data-travelid="28042" data-url="https://springtime.se/resor/training-camp-portugal-senior/temaveckor/avresa-11-mars-2023/" data-bookinglink="https://bokaspringtime.comers.se/pages/gwt.logic.search.CheckCongressPricePeriod.action?flow_cd=IFRAMEPRODCAL3&amp;noYouth=0&amp;noChild=0&amp;noInfant=0&amp;noPax=1&amp;findRoomAlternatives=true&amp;destination_cd=FAO&amp;toDateString=23-03-11&amp;resort_cd=FAO&amp;product_cd=TCS23V3&amp;fromDateString=23-03-11&amp;package_id1=7804"> 11 Mars 2023 - Alla avreseorter, 7 dagar 12995kr</option>
+               </optgroup>
+            </select>
+         </div>
+         <!-- .inner -->
+      </div>
+      <!-- .booking-select -->
+   </div>
+   <body>
+</html>
