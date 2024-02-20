@@ -16,18 +16,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <title> Test site </title>
-   <script type="text/javascript" src="//testiframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
+   <script type="text/javascript" src="//liframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" id="vue-widget-js"></script>
-   <script type="text/javascript" src="//testiframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers-widget-js"></script>
+   <script type="text/javascript" src="//liframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers-widget-js"></script>
    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" id="comers-jquery-js"></script>
-   <script type="text/javascript" src="//testiframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" id="iframe-resizer-js"></script>
+   <script type="text/javascript" src="//liframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" id="iframe-resizer-js"></script>
    
    <style >
       #searchFormContainer { position:absolute; padding:0.5em 2em; max-width:96%; z-index:3; left:50%; bottom:3em; transform:translate(-50%, 0); background-color:rgba(255,255,255,0.8); border:5px solid #FFF; outline:1px solid #000; }
 
       </style>
-   <link rel="stylesheet" id="comers-external-css" href="//testiframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" media="all">
-   <link rel="stylesheet" id="comers-minicart-css" href="//testiframealv.comers.se/pages/org/ALV/css/alv_comersstandard_minicart_v2.css" media="all">
+   <link rel="stylesheet" id="comers-external-css" href="//liframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" media="all">
+   <link rel="stylesheet" id="comers-minicart-css" href="//liframealv.comers.se/pages/org/ALV/css/alv_comersstandard_minicart_v2.css" media="all">
    <link rel="stylesheet" id="comers-icons-css" href="//fonts.googleapis.com/icon?family=Material+Icons&ver=5.8.4" media="all">
    </head>
    <!-- Google tag (gtag.js) -->
@@ -48,7 +48,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script type='text/javascript'>
          (function() {
              ComersIframeIntegration.create({
-                 comersSiteBaseUrl: '//testiframealv.comers.se',
+                 comersSiteBaseUrl: '//liframealv.comers.se',
                  bookingPageUrl: '//comers-test.github.io/archives',
                  debug: false,
                  cartContainerId: 'comersCartContainer',
@@ -58,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          var $j = jQuery.noConflict();
       </script>
       // This code displays the iframe and resize it to fit.
-<script src="//testiframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
+<script src="//liframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
       <script type="text/javascript">
 function setupTrackingGA() {
    console.log('setupTrackingGA');
@@ -67,7 +67,7 @@ function setupTrackingGA() {
             const clientId = tracker.get('clientId');
    console.log('parent client id:', clientId);
             const frameWindow = document.getElementById('comersIframeContainer').contentWindow;
-            frameWindow.postMessage(clientId, '//testiframealv.comers.se?externalFrameURL=//comers-test.github.io/');
+            frameWindow.postMessage(clientId, '//liframealv.comers.se?externalFrameURL=//comers-test.github.io/');
         });
     }
 }
@@ -87,7 +87,7 @@ function setupTrackingGA() {
 <script type="text/javascript">
     let iframeUrl = sessionStorage.getItem('searchUrl');
     if (iframeUrl === null) {
-        iframeUrl = '//testiframealv.comers.se';
+        iframeUrl = '//liframealv.comers.se';
     } else {
         sessionStorage.removeItem('searchUrl');
     }
@@ -99,10 +99,10 @@ document.getElementById('comersIframeContainer').src = iframeUrl;
              SearchFormWidget.create({
                  containerId: 'searchFormContainer',
                  flow_cd: 'IFRAME',
-                 baseUrl: '//testiframealv.comers.se'
+                 baseUrl: '//liframealv.comers.se'
              });
          })();
       </script>
       <div id="searchFormContainer"></div>-->
-   </body><iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=//comers-test.github.io"></iframe>
+   </body><iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=//comers-test.github.io"></iframe>
 </html>
