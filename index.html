@@ -46,16 +46,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
       <div id="comersCartContainer"></div>
       <script type='text/javascript'>
-         (function() {
-             ComersIframeIntegration.create({
-                 comersSiteBaseUrl: '//liframealv.comers.se',
-                 bookingPageUrl: '//comers-test.github.io/archives',
-                 debug: false,
-                 cartContainerId: 'comersCartContainer',
-                useGA4:true,
-                gtagId: 'GTM-MVJVWPD7'
-             });
-         })()
          var $j = jQuery.noConflict();
       </script>
       // This code displays the iframe and resize it to fit.
@@ -67,6 +57,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    
     window.addEventListener('DOMContentLoaded', function() {
         document.getElementById('comersIframeContainer').onload = initIframeResizer;
+       ComersIframeIntegration.create({
+                 comersSiteBaseUrl: '//liframealv.comers.se',
+                 bookingPageUrl: '//comers-test.github.io/archives',
+                 debug: false,
+                 cartContainerId: 'comersCartContainer',
+                useGA4:true,
+                gtagId: 'GTM-MVJVWPD7'
+             });
     });
 </script>
 <iframe id="comersIframeContainer" src="" scrolling="no" frameBorder="0"  width="100%"></iframe>
