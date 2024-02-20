@@ -57,6 +57,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    
     window.addEventListener('DOMContentLoaded', function() {
         document.getElementById('comersIframeContainer').onload = initIframeResizer;
+       console.log('init');
        ComersIframeIntegration.create({
                  comersSiteBaseUrl: '//liframealv.comers.se',
                  bookingPageUrl: '//comers-test.github.io/archives',
