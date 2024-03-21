@@ -67,20 +67,13 @@
         // This code displays the iframe and resize it to fit.
         <script src="//liframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-            function initIframeResizer() {
-                console.log("init iframe resizer");
-                iFrameResize({ log: false, minHeight: 600, checkOrigin: false }, "#comersIframeContainer");
-            }
 
             window.addEventListener("DOMContentLoaded", function () {
-                document.getElementById("comersIframeContainer").onload = initIframeResizer;
                 ComersIframeIntegration.create({
                     comersSiteBaseUrl: "//liframealv.comers.se",
-                    bookingPageUrl: "//comers-test.github.io/archives",
+                    bookingPageUrl: "//comers-test.github.io/page1.html",
                     debug: false,
-                    cartContainerId: "comersCartContainer",
-                    useGA4: true,
-                    gtagId: "G-LSMC3S9NE7", //'GTM-MVJVWPD7'
+                    cartContainerId: "comersCartContainer"
                 });
             });
         </script>
