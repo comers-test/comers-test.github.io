@@ -39,7 +39,7 @@
                     debug: false,
                     cartContainerId: "comersCartContainer"
                 });
-              const iframeUrl = sessionStorage.getItem('searchUrl');
+              let iframeUrl = sessionStorage.getItem('searchUrl');
               if (iframeUrl === null) {
                 iframeUrl = '//liframealv.comers.se/pages/';
               } else {
