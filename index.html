@@ -33,13 +33,14 @@
             });
         </script>
          <script type="text/javascript">
-            (function() {
+             
+            window.addEventListener("DOMContentLoaded", function () {
                 SearchFormWidget.create({
                     containerId: 'searchFormContainer',
                     flow_cd: 'WIDGET',
                     baseUrl: '//liframealv.comers.se'
                 });
-            })();
+            });
          </script>
          <div id="searchFormContainer"></div>
     </body>
