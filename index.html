@@ -29,20 +29,22 @@
     <body>
         <div id="comersCartContainer"></div>
         <script type="text/javascript">
-            window.addEventListener("DOMContentLoaded", function () {
-                ComersIframeIntegration.create({
-                    comersSiteBaseUrl: "//testiframealv.comers.se",
-                    bookingPageUrl: "//alv.sultandev.se/boende/bokning/",
-                    cartContainerId: "comersCartContainer",
-                    debug: false,
+            (function() {
+                    ComersIframeIntegration.create({
+                        comersSiteBaseUrl: "//testiframealv.comers.se",
+                        bookingPageUrl: "//alv.sultandev.se/boende/bokning/",
+                        cartContainerId: "comersCartContainer",
+                        debug: false,
                 });
-                var $j = jQuery.noConflict();
-                SearchFormWidget.create({
-                    containerId: "searchFormContainer",
-                    flow_cd: "IFRAME",
-                    baseUrl: "//testiframealv.comers.se",
-                });
-            });
+            })();
+            var $j = jQuery.noConflict();
+                (function() {
+                    SearchFormWidget.create({
+                        containerId: "searchFormContainer",
+                        flow_cd: "IFRAME",
+                        baseUrl: "//testiframealv.comers.se",
+                    });
+            })();
         </script>
         <div id="searchFormContainer"></div>
         <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://alv.sultandev.se"></iframe>
