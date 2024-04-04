@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html class="theme-next mist use-motion">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta http-equiv="Cache-Control" content="no-transform" />
-      <meta http-equiv="Cache-Control" content="no-siteapp" />
-      <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <title>Test site</title>
-      <script type="text/javascript" src="//testiframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" id="vue_widget-js"></script>
-      <script type="text/javascript" src="//testiframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers_widget-js"></script>
-      <link rel="stylesheet" id="comers_external_css-css" href="//testiframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" type="text/css" media="all">
-      <link rel="stylesheet" id="comers_minicart_css-css" href="//testiframealv.comers.se/pages/v2/css/comersstandard_minicart_v2.css" type="text/css" media="all">
-      <link rel="stylesheet" id="comers_icons_css-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all">
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" type="text/javascript"></script>
-      <style>
-         #searchFormContainer {
-         position: absolute;
-         z-index: 3;
-         left: 50%;
-         transform: translate(-50%, 0);
-         background-color: #FEFCF0;
-         }
-      </style>
-   </head>
-   <div id="comersCartContainer"></div>
-   <script type="text/javascript">
-      window.addEventListener("DOMContentLoaded", function () {
-         ComersIframeIntegration.create({
-      comersSiteBaseUrl: '//testiframealv.comers.se',
-      bookingPageUrl: '//alv.sultandev.se/boende/bokning/',
-      cartContainerId: 'comersCartContainer',
-      debug: false
-      });
-      var $j = jQuery.noConflict();
-          SearchFormWidget.create({
-      containerId: 'searchFormContainer',
-      flow_cd: 'IFRAME',
-      baseUrl: '//testiframealv.comers.se'
-      });
-      });
-   </script>
-   <div id="searchFormContainer"></div>
-   <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://alv.sultandev.se"></iframe>
-   </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Test site</title>
+        <script type="text/javascript" src="//testiframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" id="vue_widget-js"></script>
+        <script type="text/javascript" src="//testiframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers_widget-js"></script>
+        <link rel="stylesheet" id="comers_external_css-css" href="//testiframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="comers_minicart_css-css" href="//testiframealv.comers.se/pages/v2/css/comersstandard_minicart_v2.css" type="text/css" media="all" />
+        <link rel="stylesheet" id="comers_icons_css-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" type="text/javascript"></script>
+        <style>
+            #searchFormContainer {
+                position: absolute;
+                z-index: 3;
+                left: 50%;
+                transform: translate(-50%, 0);
+                background-color: #fefcf0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="comersCartContainer"></div>
+        <script type="text/javascript">
+            window.addEventListener("DOMContentLoaded", function () {
+                ComersIframeIntegration.create({
+                    comersSiteBaseUrl: "//testiframealv.comers.se",
+                    bookingPageUrl: "//alv.sultandev.se/boende/bokning/",
+                    cartContainerId: "comersCartContainer",
+                    debug: false,
+                });
+                var $j = jQuery.noConflict();
+                SearchFormWidget.create({
+                    containerId: "searchFormContainer",
+                    flow_cd: "IFRAME",
+                    baseUrl: "//testiframealv.comers.se",
+                });
+            });
+        </script>
+        <div id="searchFormContainer"></div>
+        <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://alv.sultandev.se"></iframe>
+    </body>
 </html>
