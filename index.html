@@ -34,9 +34,8 @@
                         comersSiteBaseUrl: "//testiframealv.comers.se",
                         bookingPageUrl: "//alv.sultandev.se/boende/bokning/",
                         cartContainerId: "comersCartContainer",
-                        debug: false,
+                        debug: true
                 });
-                    console.log('start integration');
             })();
             var $j = jQuery.noConflict();
                 (function() {
@@ -45,7 +44,6 @@
                         flow_cd: "IFRAME",
                         baseUrl: "//testiframealv.comers.se",
                     });
-                    console.log('start widget');
             })();
         </script>
         <div id="searchFormContainer"></div>
