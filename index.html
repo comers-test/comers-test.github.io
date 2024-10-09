@@ -18,11 +18,14 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
         <style type="text/css">
             #searchFormContainer {
-                position: absolute;
-                z-index: 3;
-                left: 50%;
-                transform: translate(-50%, 0);
                 background-color: #fefcf0;
+            }
+            #searchFormWrapper.searchFormWidget {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            #searchFormWrapper.searchFormWidget .searchComponentContainer .searchComponentRow .searchComponent.specialWidgetComponent {
+                max-width: 500px !important;
             }
         </style>
     </head>
