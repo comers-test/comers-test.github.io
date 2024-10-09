@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html class="theme-next mist use-motion">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta http-equiv="Cache-Control" content="no-transform" />
-        <meta http-equiv="Cache-Control" content="no-siteapp" />
-        <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <title>Test site</title>
-        <script type="text/javascript" src="//liframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" id="vue_widget-js"></script>
-        <script type="text/javascript" src="//liframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers_widget-js"></script>
-        <link rel="stylesheet" id="comers_external_css-css" href="//liframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="comers_minicart_css-css" href="//liframealv.comers.se/pages/v2/css/comersstandard_minicart_v2.css" type="text/css" media="all" />
-        <link rel="stylesheet" id="comers_icons_css-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all" />
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <div style="height: 500px;border: 1px solid black;"></div>
-    <div id="comersCartContainer"></div>
-        <script src="//liframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
-        <iframe id="comersIframeContainer" width="100%" src="//liframealv.comers.se/pages"></iframe>
-        <script type="text/javascript">
-            (function() {
-                    ComersIframeIntegration.create({
-                        comersSiteBaseUrl: "//liframealv.comers.se",
-                        bookingPageUrl: "//comers-test.github.io/page1.html",
-                        cartContainerId: "comersCartContainer",
-                        debug: true,
-                        offsetTop: 50
-                });
-            let iframeUrl = sessionStorage.getItem('searchUrl');
-            if (iframeUrl === null) {
-                iframeUrl = '//liframealv.comers.se';
-            } else {
-                sessionStorage.removeItem('searchUrl');
-            }
-        document.getElementById('comersIframeContainer').src = iframeUrl;
-                iFrameResize({log: false}, '#comersIframeContainer');
-            })();
-            var $j = jQuery.noConflict();
-        </script>
-        <!--<iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/page1.html"></iframe>-->
-    </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta http-equiv="Cache-Control" content="no-transform" />
+      <meta http-equiv="Cache-Control" content="no-siteapp" />
+      <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
+      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      <title>Test site</title>
+      <script type="text/javascript" src="//liframealv.comers.se/pages/js/iframe/comers-iframe-integration.1.0.js" id="comers-iframe-integration-js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js" id="vue_widget-js"></script>
+      <script type="text/javascript" src="//liframealv.comers.se/pages/v2/js/widget-v2.min.js" id="comers_widget-js"></script>
+      <link rel="stylesheet" id="comers_external_css-css" href="//liframealv.comers.se/pages/org/ALV/css/alv_comersexternal.css" type="text/css" media="all" />
+      <link rel="stylesheet" id="comers_minicart_css-css" href="//liframealv.comers.se/pages/v2/css/comersstandard_minicart_v2.css" type="text/css" media="all" />
+      <link rel="stylesheet" id="comers_icons_css-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all" />
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
+   </head>
+   <body>
+      <div style="height: 500px;border: 1px solid black;"></div>
+      <div id="comersCartContainer"></div>
+      <script src="//liframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
+      <iframe id="comersIframeContainer" width="100%"></iframe>
+      <script type="text/javascript">
+         (function() {
+                 ComersIframeIntegration.create({
+                     comersSiteBaseUrl: "//liframealv.comers.se",
+                     bookingPageUrl: "//comers-test.github.io/page1.html",
+                     cartContainerId: "comersCartContainer",
+                     debug: true,
+                     offsetTop: 50
+             });
+         let iframeUrl = sessionStorage.getItem('searchUrl');
+         if (iframeUrl === null) {
+             iframeUrl = '//liframealv.comers.se';
+         } else {
+             sessionStorage.removeItem('searchUrl');
+         }
+         document.getElementById('comersIframeContainer').src = iframeUrl;
+             iFrameResize({log: false}, '#comersIframeContainer');
+         })();
+         var $j = jQuery.noConflict();
+      </script>
+      <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/page1.html"></iframe>
+   </body>
 </html>
