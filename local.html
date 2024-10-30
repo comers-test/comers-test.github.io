@@ -44,8 +44,20 @@
                         baseUrl: "//liframealv.comers.se",
                     });
             })();
+
+            function gotoBookingPage(searchUrl) {
+                postMessage(JSON.stringify({"searchUrl": url}), location.origin);
+            }
         </script>
         <div id="searchFormContainer"></div>
+        <button type="button" onclick="gotoBookingPage('showpage.jsp?page_cd=I.START.OXG')">Boka Oxgården</button>
+        <br/>
+        
+        <button type="button" onclick="gotoBookingPage('showpage.jsp?page_cd=I.START')">Boka Stugor</button>
+        <br/>
+        
+        <button type="button" onclick="gotoBookingPage('showpage.jsp?page_cd=I.START.STALL')">Boka ställplats</button>
+    
         <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io"></iframe>
     </body>
 </html>
