@@ -23,11 +23,28 @@
             #searchFormWrapper.searchFormWidget .searchComponentContainer .searchComponentRow .searchComponent.specialWidgetComponent {
                 max-width: 500px !important;
             }
+            .button {
+                border-radius: 60px;
+                border: 1px solid black;
+                padding: 10px;
+                background-color: #AE1F17;
+                color: #fff;
+                display: inline-block;
+                margin-right: 20px;
+            }
         </style>
     </head>
     <body>
         <div id="comersCartContainer"></div>
+        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START.OXG')">Boka Oxgården</button>
+        
+        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START')">Boka Stugor</button>
+        
+        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START.STALL')">Boka ställplats</button>
         <script type="text/javascript">
+            function postAction(searchUrl) {
+                postMessage(JSON.stringify({"searchUrl": window.getComersBaseUrl() + searchUrl}), location.origin);
+            }
             (function() {
                     ComersIframeIntegration.create({
                         comersSiteBaseUrl: "//testiframealv.comers.se",
