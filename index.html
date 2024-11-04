@@ -17,12 +17,6 @@
         <link rel="stylesheet" id="comers_icons_css-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" type="text/javascript"></script>
         <style type="text/css">
-            #searchFormContainer {
-                background-color: #fefcf0;
-            }
-            #searchFormWrapper.searchFormWidget .searchComponentContainer .searchComponentRow .searchComponent.specialWidgetComponent {
-                max-width: 500px !important;
-            }
             .button {
                 border-radius: 60px;
                 border: 1px solid black;
@@ -36,15 +30,14 @@
     </head>
     <body>
         <div id="comersCartContainer"></div>
-        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START.OXG')">Boka Oxgården</button>
+        <button type="button" class="button" onclick="window.location.href = 'https://comers-test.github.io/oxg.html'">Boka Oxgården</button>
         
-        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START')">Boka Stugor</button>
+        <button type="button" class="button" onclick="window.location.href = 'https://comers-test.github.io/cot.html'">Boka Stugor</button>
         
-        <button type="button" class="button" onclick="postAction('showpage.jsp?page_cd=I.START.STALL')">Boka ställplats</button>
+        <button type="button" class="button" onclick="window.location.href = 'https://comers-test.github.io/stall.html'">Boka ställplats</button>
+        
+        <button type="button" class="button" onclick="window.location.href = 'https://comers-test.github.io/checkin.html'">Checka in</button>
         <script type="text/javascript">
-            function postAction(searchUrl) {
-                postMessage(JSON.stringify({"searchUrl": window.getComersBaseUrl() + searchUrl}), location.origin);
-            }
             (function() {
                     ComersIframeIntegration.create({
                         comersSiteBaseUrl: "//testiframealv.comers.se",
@@ -54,15 +47,7 @@
                 });
             $j = jQuery.noConflict();
             })();
-                (function() {
-                    SearchFormWidget.create({
-                        containerId: "searchFormContainer",
-                        flow_cd: "IFRAME",
-                        baseUrl: "//testiframealv.comers.se",
-                    });
-            })();
         </script>
-        <div id="searchFormContainer"></div>
         <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io"></iframe>
     </body>
 </html>
