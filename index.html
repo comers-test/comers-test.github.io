@@ -43,8 +43,8 @@
       </script>
       <iframe id="comersIframeContainer" height="500" width="100%"></iframe>
       <script type="text/javascript">
-         (async () => {
-            var iframeUrl = null;
+          document.addEventListener("DOMContentLoaded", async () => {
+              var iframeUrl = null;
                        
          	iframeUrl = await window.getComersSessionItem('searchUrl');
          	if (iframeUrl === null) {
@@ -54,10 +54,7 @@
          		await window.removeComersSessionItem('searchUrl');
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
-})();
-         
-         
-               
+          });
       </script>
       <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io"></iframe>
    </body>
