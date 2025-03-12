@@ -30,7 +30,9 @@
                      debug: true,
                      offsetTop: 50
              });
-         var iframeUrl = null;
+         var $j = jQuery.noConflict();
+         })();
+          (async () => {var iframeUrl = null;
          try {
          		
          	iframeUrl = window.getComersSessionItem('searchUrl');
@@ -45,8 +47,8 @@
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
              iFrameResize({log: false}, '#comersIframeContainer');
-         })();
-         var $j = jQuery.noConflict();
+})();
+   
       </script>
       <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/booking.html"></iframe>
    </body>
