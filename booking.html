@@ -48,7 +48,6 @@
          	if (iframeUrl === null) {
          		iframeUrl = '//liframealv.comers.se/boende';
          	} else {
-         		iframeUrl = await window.getComersSessionItem('searchUrl');
          		await window.removeComersSessionItem('searchUrl');
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
