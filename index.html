@@ -43,7 +43,7 @@
       </script>
       <iframe id="comersIframeContainer" height="500" width="100%"></iframe>
       <script type="text/javascript">
-         var iframeUrl = null;
+         (async () => {var iframeUrl = null;
          try {
          		
          	iframeUrl = window.getComersSessionItem('searchUrl');
@@ -57,6 +57,8 @@
          		window.removeComersSessionItem('searchUrl');
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
+})();
+         
          
                
       </script>
