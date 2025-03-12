@@ -32,22 +32,28 @@
              });
          var $j = jQuery.noConflict();
          })();
-          (async () => {var iframeUrl = null;
-         try {
-         		
-         	iframeUrl = window.getComersSessionItem('searchUrl');
-         	} catch (e) {
-         		console.log(e);
-         	}
+
+         document.addEventListener("DOMContentLoaded", async () => {
+            ComersIframeIntegration.create({
+                     comersSiteBaseUrl: "//liframealv.comers.se",
+                     bookingPageUrl: "//comers-test.github.io/booking.html",
+                     cartContainerId: "comersCartContainer",
+                     debug: true,
+                     offsetTop: 50
+             });
+         var $j = jQuery.noConflict();
+            var iframeUrl = null;
+            
+         	iframeUrl = await window.getComersSessionItem('searchUrl');
          	if (iframeUrl === null) {
          		iframeUrl = '//liframealv.comers.se/boende';
          	} else {
-         		iframeUrl = window.getComersSessionItem('searchUrl');
-         		window.removeComersSessionItem('searchUrl');
+         		iframeUrl = await window.getComersSessionItem('searchUrl');
+         		await window.removeComersSessionItem('searchUrl');
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
              iFrameResize({log: false}, '#comersIframeContainer');
-})();
+      });
    
       </script>
       <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//liframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/booking.html"></iframe>
