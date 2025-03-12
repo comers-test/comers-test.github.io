@@ -43,18 +43,15 @@
       </script>
       <iframe id="comersIframeContainer" height="500" width="100%"></iframe>
       <script type="text/javascript">
-         (async () => {var iframeUrl = null;
-         try {
-         		
-         	iframeUrl = window.getComersSessionItem('searchUrl');
-         	} catch (e) {
-         		console.log(e);
-         	}
+         (async () => {
+            var iframeUrl = null;
+                       
+         	iframeUrl = await window.getComersSessionItem('searchUrl');
          	if (iframeUrl === null) {
          		iframeUrl = '//liframealv.comers.se/boende';
          	} else {
-         		iframeUrl = window.getComersSessionItem('searchUrl');
-         		window.removeComersSessionItem('searchUrl');
+         		iframeUrl = await window.getComersSessionItem('searchUrl');
+         		await window.removeComersSessionItem('searchUrl');
          	}
          	document.getElementById('comersIframeContainer').src = iframeUrl;
 })();
