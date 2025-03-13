@@ -23,26 +23,21 @@
       <iframe id="comersIframeContainer" width="100%"></iframe>
       <script type="text/javascript">
          var $j = jQuery.noConflict();
-         document.addEventListener("DOMContentLoaded", () => {
+         document.addEventListener("DOMContentLoaded", async () => {
             ComersIframeIntegration.create({
-                     comersSiteBaseUrl: "//testiframealv.comers.se",
-                     bookingPageUrl: "//comers-test.github.io/booking.html",
-                     cartContainerId: "comersCartContainer",
-                     debug: true,
-                     offsetTop: 50
+               comersSiteBaseUrl: "//testiframealv.comers.se",
+               bookingPageUrl: "//comers-test.github.io/booking.html",
+               cartContainerId: "comersCartContainer",
+               debug: true,
+               offsetTop: 50
              });
-            var iframeUrl = null;
-            
-         	iframeUrl = sessionStorage.getItem('searchUrl');
-            console.log(iframeUrl);
-         	if (iframeUrl === null) {
-         		iframeUrl = '//testiframealv.comers.se/boende';
-         	} else {
-               sessionStorage.removeItem('searchUrl');
-            }
-         	document.getElementById('comersIframeContainer').src = iframeUrl;
+             var iframeUrl = await window.getComersSessionItem('searchUrl');
+             if (iframeUrl === null) {
+                iframeUrl = '//testiframealv.comers.se/boende';
+             }
+             document.getElementById('comersIframeContainer').src = iframeUrl;
              iFrameResize({log: false}, '#comersIframeContainer');
-      });
+         });
    
       </script>
       <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/booking.html"></iframe>
