@@ -31,11 +31,7 @@
                debug: true,
                offsetTop: 50
              });
-             var iframeUrl = await window.getComersSessionItem('searchUrl');
-             if (iframeUrl === null) {
-                iframeUrl = '//testiframealv.comers.se/boende';
-             }
-             document.getElementById('comersIframeContainer').src = iframeUrl;
+             await window.loadComersFrame('//testiframealv.comers.se/boende');
              iFrameResize({log: false}, '#comersIframeContainer');
          });
    
