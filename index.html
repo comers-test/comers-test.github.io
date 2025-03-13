@@ -43,10 +43,10 @@
       </script>
       <iframe id="comersIframeContainer" height="500" width="100%"></iframe>
       <script type="text/javascript">
-          document.addEventListener("DOMContentLoaded", async () => {
+          document.addEventListener("DOMContentLoaded", () => {
               var iframeUrl = null;
                        
-         	iframeUrl = await window.getComersSessionItem('searchUrl');
+         	iframeUrl = sessionStorage.getItem('searchUrl');
          	if (iframeUrl === null) {
          		iframeUrl = '//alv.github.io/boende';
          	}
