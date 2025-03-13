@@ -34,9 +34,12 @@
             var iframeUrl = null;
             
          	iframeUrl = sessionStorage.getItem('searchUrl');
+            console.log(iframeUrl);
          	if (iframeUrl === null) {
          		iframeUrl = '//testiframealv.comers.se/boende';
-         	}
+         	} else {
+               sessionStorage.removeItem('searchUrl');
+            }
          	document.getElementById('comersIframeContainer').src = iframeUrl;
              iFrameResize({log: false}, '#comersIframeContainer');
       });
