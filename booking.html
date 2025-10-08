@@ -21,21 +21,6 @@
       <div id="comersCartContainer"></div>
       <script src="//testiframealv.comers.se/pages/js/iframeResizer/js/iframeResizer.min.js" type="text/javascript"></script>
       <iframe id="comersIframeContainer" width="100%"></iframe>
-      <script type="text/javascript">
-         var $j = jQuery.noConflict();
-         document.addEventListener("DOMContentLoaded", async () => {
-            ComersIframeIntegration.create({
-               comersSiteBaseUrl: "//testiframealv.comers.se",
-               bookingPageUrl: "//comers-test.github.io/booking.html",
-               cartContainerId: "comersCartContainer",
-               debug: true,
-               offsetTop: 50
-             });
-             await window.loadComersFrame('//testiframealv.comers.se');
-             iFrameResize({log: false}, '#comersIframeContainer');
-         });
-   
-      </script>
-      <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//testiframealv.comers.se/pages/showpage.jsp?page_cd=IFRAMECART&externalFrameURL=https://comers-test.github.io/booking.html"></iframe>
+      <iframe id="comersIframeCartHandler" width="auto" height="0" frameborder="0" src="//teststt.comers.se/pages/v3/login"></iframe>
    </body>
 </html>
