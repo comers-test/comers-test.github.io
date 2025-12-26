@@ -9,22 +9,22 @@
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <title>Test site</title>
-    <link rel="stylesheet" href="//testiframealv.comers.se/pages/frontend/comers-component.css">
-    <script src="//testiframealv.comers.se/pages/frontend/iframe-integration-v3.js"></script>
+      <link rel="stylesheet" href="//testiframealv.comers.se/pages/frontend/comers-component.css">
+      <script src="//testiframealv.comers.se/pages/frontend/iframe-integration-v3.js"></script>
    </head>
-<body>
-<div style="height: 100px; margin-bottom: 100px;">
-    <div id="comersCartContainer" style="position: absolute; right: 100px;"></div>
-</div>
-<div id="root" style="width: 80%;margin: 0 auto 40px auto;">
-    <div id="custom-container" data-component="comers-component" data-init-route="/booking_v3/accommodation?page=I.START"></div>
-</div>
-<script type="text/javascript">
-    ComersIframeWidget.initGlobal({
-        comersDomain: '//testiframealv.comers.se',
-        bookingPageUrl: 'comers-test.github.io/booking.html',
-        debug: true
-    });
-</script>
-</body>
+   <body>
+      <div style="height: 100px; margin-bottom: 100px;">
+         <div id="comersCartContainer" style="position: absolute; right: 100px;"></div>
+      </div>
+      <div id="root" style="width: 80%;margin: 0 auto 40px auto;">
+         <div id="custom-container" data-component="comers-component" data-init-route="/booking_v3/accommodation?page=I.START"></div>
+      </div>
+      <script type="text/javascript">
+         ComersIframeWidget.initGlobal({
+             comersDomain: '//testiframealv.comers.se',
+             bookingPageUrl: 'comers-test.github.io/booking.html',
+             debug: true
+         });
+      </script>
+   </body>
 </html>
