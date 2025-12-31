@@ -1,33 +1,192 @@
+
+
+
+
 <!DOCTYPE html>
-<html class="theme-next mist use-motion">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta http-equiv="Cache-Control" content="no-transform" />
-      <meta http-equiv="Cache-Control" content="no-siteapp" />
-      <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <title>Test site</title>
-      <script src="https://liframealv.comers.se/pages/frontend/iframe-integration-v3.js"></script>
-      <style>
-         #comers-widget-container {
-         max-width: 1080px;
-         margin: 0 auto;
-         }
-      </style>
-   </head>
-   <body>
-      <div style="height: 100px; margin-bottom: 100px;">
-         <div id="comersCartContainer" style="position: absolute; right: 100px;"></div>
-      </div>
-      <div id="comers-widget-container" data-component="comers-search-widget" data-flow="IFRAME"></div>
-      <script type="text/javascript">
-         ComersIframeWidget.initGlobal({
-             comersDomain: 'https://liframealv.comers.se',
-             bookingPageUrl: 'https://comers-test.github.io/booking.html',
-             debug: true
-         });
-      </script>
-   </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camping Booking Test Site</title>
+  <style>
+    /* Hero Section with Widget */
+    .hero-section {
+      padding: 60px 20px;
+      text-align: center;
+      url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .widget-wrapper {
+      margin: 40px auto;
+      width: 100%;
+      max-width: 1024px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Content Sections */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 5%;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .card-body h3 { margin-top: 0; color: #1a3a1a; }
+  </style>
+</head>
+
+<body>
+
+
+
+
+<link rel="stylesheet" href="https://testiframealv.comers.se/assets/frontend/comers-component.css?v=450">
+<script src="https://testiframealv.comers.se/pages/frontend/iframe-integration-v3.js?v=450"></script>
+
+<style>
+    /* Base Styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f4ed;
+        color: #333;
+    }
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        height: 80px;
+        background-color: #1a3a1a; /* Darker forest green for the header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .site-logo { font-size: 1.5rem; font-weight: bold; }
+
+    /* Navigation Menu */
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; opacity: 0.8; }
+    .nav-menu a:hover { opacity: 1; }
+
+    #comers-cart-container { min-width: 120px; display: flex; justify-content: flex-end; }
+
+    /* Hide menu on very small screens for this test */
+    @media (max-width: 600px) { .nav-menu { display: none; } }
+    .booking-widget-adaptive {
+        margin: 40px auto;
+        background: #f5f4ed;
+        width: 100%; /* Default for mobile/small tablets */
+    }
+
+    /* Large Desktops (e.g., 1200px and up) */
+    @media (min-width: 1200px) {
+        .booking-widget-adaptive {
+            width: 80%;
+        }
+    }
+
+    /* 4K / Ultra Wide Screens (e.g., 2560px and up) */
+    @media (min-width: 2500px) {
+        .booking-widget-adaptive {
+            width: 60%;
+        }
+    }
+    /* Layout Container */
+    #root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 80vh;
+        padding: 0 5px; /* Prevention for edge-touching on mobile */
+    }
+
+    .welcome-text {
+        text-align: center;
+        margin: 40px 0 20px 0;
+    }
+</style>
+
+<header class="site-header">
+    <div class="site-logo">🌲 Pineview</div>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="/">Start</a></li>
+            <li><a href="/booking.html">Booking</a></li>
+            <li><a href="/calendar.html">Calendar</a></li>
+            <li><a href="/cart.html">Cart</a></li>
+            <li><a href="/login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div id="comers-cart-container" data-component="comers-booking-cart"></div>
+</header>
+
+<script type="text/javascript">
+    ComersIframeWidget.initGlobal({
+        comersDomain: 'https://testiframealv.comers.se',
+        bookingPageUrl: 'https://testiframealv.comers.se/pages/frontend/test.jsp',
+        debug: true
+    });
+</script>
+
+<section class="hero-section">
+  <h1>Escape to the Wild</h1>
+  <p>Book your perfect pitch in seconds.</p>
+
+  <div class="widget-wrapper">
+    <div id="comers-widget-container" data-component="comers-search-widget" data-flow="IFRAME"></div>
+  </div>
+</section>
+
+<section class="content-grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=600&q=80" alt="Lake side">
+    <div class="card-body">
+      <h3>Lakeside Camping</h3>
+      <p>Enjoy stunning morning views right from your tent. Our lakeside pitches are perfect for fishing and kayaking.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84c?auto=format&fit=crop&w=600&q=80" alt="Forest path">
+    <div class="card-body">
+      <h3>Hiking Trails</h3>
+      <p>Over 50km of marked trails starting right from the campsite entrance. Perfect for all skill levels.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?auto=format&fit=crop&w=600&q=80" alt="Campfire">
+    <div class="card-body">
+      <h3>Family Activities</h3>
+      <p>Nightly campfires, guided nature walks, and a dedicated playground for the little adventurers.</p>
+    </div>
+  </div>
+</section>
+
+<footer style="text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.8;">
+  &copy; 2025 Pineview Camping Test Site
+</footer>
+
+</body>
 </html>
