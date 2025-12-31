@@ -1,29 +1,135 @@
+
+
+
+
 <!DOCTYPE html>
-<html class="theme-next mist use-motion">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-      <meta http-equiv="Cache-Control" content="no-transform" />
-      <meta http-equiv="Cache-Control" content="no-siteapp" />
-      <meta name="google-site-verification" content="rFO2stTPlHBpPsZOs8e16xTM1ltF1VVFrODq92K3Hf8" />
-      <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <title>Test site</title>
-      <script src="https://liframealv.comers.se/pages/frontend/iframe-integration-v3.js"></script>
-   </head>
-   <body>
-      <div style="height: 100px; margin-bottom: 100px;">
-         <div id="comersCartContainer" style="position: absolute; right: 100px;"></div>
-      </div>
-      <div id="root" style="width: 80%;margin: 0 auto 40px auto;">
-         <div id="custom-container" data-component="comers-component" data-init-route="/booking_v3/accommodation?page=I.START"></div>
-      </div>
-      <script type="text/javascript">
-         ComersIframeWidget.initGlobal({
-             comersDomain: 'https://liframealv.comers.se',
-             bookingPageUrl: 'https://comers-test.github.io/booking.html',
-             debug: true
-         });
-      </script>
-   </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Camping Booking</title>
+    <style>
+        #custom-container {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<link rel="stylesheet" href="https://testiframealv.comers.se/assets/frontend/comers-component.css">
+<script src="https://testiframealv.comers.se/pages/frontend/iframe-integration-v3.js"></script>
+
+<style>
+    /* Base Styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f4ed;
+        color: #333;
+    }
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        height: 80px;
+        background-color: #1a3a1a; /* Darker forest green for the header */
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    .site-logo { font-size: 1.5rem; font-weight: bold; }
+
+    /* Navigation Menu */
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { color: white; text-decoration: none; font-weight: 500; font-size: 0.9rem; opacity: 0.8; }
+    .nav-menu a:hover { opacity: 1; }
+
+    #comers-cart-container { min-width: 120px; display: flex; justify-content: flex-end; }
+
+    /* Hide menu on very small screens for this test */
+    @media (max-width: 600px) { .nav-menu { display: none; } }
+    .booking-widget-adaptive {
+        margin: 40px auto;
+        background: #f5f4ed;
+        width: 100%; /* Default for mobile/small tablets */
+    }
+
+    /* Large Desktops (e.g., 1200px and up) */
+    @media (min-width: 1200px) {
+        .booking-widget-adaptive {
+            width: 80%;
+        }
+    }
+
+    /* 4K / Ultra Wide Screens (e.g., 2560px and up) */
+    @media (min-width: 2500px) {
+        .booking-widget-adaptive {
+            width: 60%;
+        }
+    }
+    /* Layout Container */
+    #root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 80vh;
+        padding: 0 5px; /* Prevention for edge-touching on mobile */
+    }
+
+    .welcome-text {
+        text-align: center;
+        margin: 40px 0 20px 0;
+    }
+</style>
+
+<header class="site-header">
+    <div class="site-logo">🌲 Pineview</div>
+
+    <nav>
+        <ul class="nav-menu">
+           
+<li><a href="/">Start</a></li>
+<li><a href="/booking.html">Booking</a></li>
+<li><a href="/calendar.html">Calendar</a></li>
+<li><a href="/cart.html">Cart</a></li>
+<li><a href="/login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div id="comers-cart-container" data-component="comers-booking-cart"></div>
+</header>
+
+<script type="text/javascript">
+    ComersIframeWidget.initGlobal({
+        comersDomain: 'https://testiframealv.comers.se',
+bookingPageUrl: 'https://comers-test.github.io/booking.html',
+        debug: true
+    });
+</script>
+
+<div id="root">
+    <div class="welcome-text">
+        <h1>Find Your Next Adventure</h1>
+        <p>Select your dates and preferred accommodation below.</p>
+    </div>
+
+    <div id="custom-container"
+         class="booking-widget-adaptive"
+         data-component="comers-component"
+         data-class="booking-widget-adaptive"
+         data-init-route="/booking_v3/accommodation?page=I.START">
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #888; font-size: 0.9rem;">
+    &copy; 2025 Camping Reservation System
+</footer>
+
+</body>
 </html>
